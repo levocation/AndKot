@@ -1,4 +1,4 @@
-package com.example.mygrid
+package com.example.mylayout2
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,12 +10,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mygrid.ui.theme.AndKotTheme
+import com.example.mylayout2.ui.theme.AndKotTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            AndKotTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting("Android")
+                }
+            }
+        }
     }
 }
 
